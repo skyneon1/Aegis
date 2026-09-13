@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "savedAt": "2026-08-24T18:12:12.930Z",
+  "agents": [
+    {
+      "id": "god",
+      "name": "Michael",
+      "character": "michael",
+      "accent": "lemon",
+      "description": "god — runs the floor, triages requests, escalates only critical calls to you",
+      "project": "hive",
+      "tmuxTarget": "",
+      "cwd": "/home/ghost/Documents/Projects/Aegis_Agentic_Orchestration_Platform",
+      "status": "idle",
+      "action": "switching to Claude Code…",
+      "progress": 0,
+      "currentStation": "desk",
+      "ptyId": "pty-god",
+      "command": "claude --model claude-sonnet-4-6 --permission-mode bypassPermissions",
+      "provider": "claude",
+      "model": "claude-sonnet-4-6",
+      "isGod": true,
+      "terminalGeneration": 2
+    }
+  ],
+  "archived": [],
+  "restorable": [],
+  "queues": {},
+  "selectedId": "god"
+}

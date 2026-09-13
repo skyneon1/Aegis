@@ -1,0 +1,4 @@
+# Aegis eval cases — short topics, chosen to run fast on local hardware.
+# One topic per line. '#' comments and blank lines are ignored.
+Is premature optimization always bad?
+Should small teams use microservices?

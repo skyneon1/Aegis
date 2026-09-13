@@ -1,0 +1,49 @@
+# Aegis — dependencies
+#
+# The core engine (aegis/) deliberately depends on almost nothing.
+# You can run the full orchestration graph, the tests, and the CLI with
+# only `openai` + `python-dotenv` — both already present on this machine.
+#
+# Everything below the CORE block is optional. Install what you need.
+
+# ---- CORE (required for live model calls) --------------------------------
+openai>=1.40
+python-dotenv>=1.0
+
+# ---- UI (required only for `streamlit run app.py`) -----------------------
+streamlit>=1.36
+
+# ---- UI COMPONENTS (optional; app.py degrades without them) ---------------
+# Every one of these is imported behind a try/except and guarded by a HAVE_*
+# flag at the use site, so a machine that only runs the CLI or the tests does
+# not need them and `streamlit run app.py` still works if they are absent.
+# That is deliberate: the point of the core-depends-on-nothing rule is that a
+# missing UI nicety must never be able to break the engine.
+#
+#   streamlit-aggrid       sortable/filterable telemetry table
+#   streamlit-option-menu  the result-panel navigation
+#   streamlit-extras       assorted layout helpers
+streamlit-aggrid>=1.0
+streamlit-option-menu>=0.3
+streamlit-extras>=0.4
+
+# ---- TESTING (optional — tests also run via `python tests/test_graph.py`) -
+pytest>=8.0
+
+# ---- NEXT PHASE (not yet used; uncomment when we migrate the engine) -----
+# langgraph>=0.2          # replaces MiniGraph: checkpoints, interrupts, parallel branches
+# langchain-core>=0.3
+# tree-sitter-languages   # repo maps for the future Coder agent
+# unidiff                 # safe patch application, per the strategy report
+
+# ---- DEV TOOLS (not imported by any module; install ad hoc) --------------
+# Deliberately NOT pinned above: nothing in aegis/ imports them, and a
+# reproducible run of this project must not require them.
+#   ruff        static analysis. `ruff check --select F,E9,B,UP,SIM,RET`
+#               found ~30 issues, of which 4 were real (a dead import, a
+#               zip() that could silently drop a metric, two raise-from).
+#               One suggestion (SIM401) had to be REFUSED: rewriting the
+#               session_state lookup as .get() reintroduces a documented
+#               AppTest bug - see the noqa comment in app.py.
+#   playwright  headless screenshots for eyeballing the UI. Point it at
+#               /usr/bin/google-chrome; the bundled chromium version drifts.

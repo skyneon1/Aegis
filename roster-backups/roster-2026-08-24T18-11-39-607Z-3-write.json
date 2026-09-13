@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "savedAt": "2026-08-24T18:11:38.510Z",
+  "agents": [
+    {
+      "id": "god",
+      "name": "Michael",
+      "character": "michael",
+      "accent": "lemon",
+      "description": "god — runs the floor, triages requests, escalates only critical calls to you",
+      "project": "hive",
+      "tmuxTarget": "",
+      "cwd": "/home/ghost/Documents/Projects/Aegis_Agentic_Orchestration_Platform",
+      "status": "idle",
+      "action": "continuing…",
+      "progress": 0,
+      "currentStation": "desk",
+      "ptyId": "pty-god",
+      "command": "gemini --model auto --approval-mode=yolo",
+      "provider": "gemini",
+      "model": "auto",
+      "isGod": true,
+      "terminalGeneration": 1
+    }
+  ],
+  "archived": [],
+  "restorable": [],
+  "queues": {
+    "god": [
+      {
+        "id": "q-1787595098009-1",
+        "text": "i have given you all the pdf file about this project aegsis, iw ant you to build the subagents and make this project",
+        "ts": 1787595098009
+      }
+    ]
+  },
+  "selectedId": "god"
+}

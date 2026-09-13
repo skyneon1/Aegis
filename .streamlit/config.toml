@@ -1,0 +1,17 @@
+# Streamlit theme. Set here rather than injected as CSS because these values
+# also drive widgets Streamlit renders itself (inputs, sliders, tabs), which
+# stylesheet overrides reach unreliably and inconsistently across versions.
+#
+# No `base` is set on purpose: that lets the viewer's own light/dark choice
+# stand, and the custom CSS in app.py is written against translucent overlays
+# rather than fixed greys so it reads correctly either way.
+[theme]
+primaryColor = "#4c8dff"
+font = "sans serif"
+
+[server]
+headless = true
+runOnSave = true
+
+[browser]
+gatherUsageStats = false

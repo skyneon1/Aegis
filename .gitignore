@@ -1,0 +1,13 @@
+.env
+runs/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.streamlit/secrets.toml
+.aegis-keys.tmp
+.env.bak*
+.aegis-ui.log
+.aegis-ui.pid
+.claude/settings.local.json
